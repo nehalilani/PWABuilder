@@ -345,6 +345,7 @@ export class WindowsForm extends AppPackageFormBase {
                 tooltipLink:
                   'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
                 inputId: 'package-id-input',
+                required: true,
                 placeholder: 'MyCompany.MyApp',
                 minLength: 3,
                 maxLength: 50,
@@ -363,6 +364,7 @@ export class WindowsForm extends AppPackageFormBase {
                 tooltipLink:
                   'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
                 inputId: 'publisher-display-name-input',
+                required: true,
                 minLength: 3,
                 spellcheck: false,
                 validationErrorMessage:
@@ -383,6 +385,7 @@ export class WindowsForm extends AppPackageFormBase {
                 validationErrorMessage:
                   'Publisher ID must be in the format CN=XXXX. Get your publisher ID from Partner Center.',
                 pattern: 'CN=.+',
+                required: true,
                 spellcheck: false,
                 minLength: 4,
                 inputHandler: (val: string) =>
