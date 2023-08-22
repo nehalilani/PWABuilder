@@ -337,62 +337,6 @@ export class WindowsForm extends AppPackageFormBase {
         style="width: 100%"
       >
         <div id="form-layout">
-          <div class="basic-settings">
-            <div class="form-group">
-              ${this.renderFormInput({
-                label: 'Package ID',
-                tooltip: `The Package ID uniquely identifying your app in the Microsoft Store. Get this value from Windows Partner Center.`,
-                tooltipLink:
-                  'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
-                inputId: 'package-id-input',
-                required: true,
-                placeholder: 'MyCompany.MyApp',
-                minLength: 3,
-                maxLength: 50,
-                spellcheck: false,
-                pattern: '[a-zA-Z0-9.-]*$',
-                validationErrorMessage:
-                  'Package ID must contain only letters, numbers, period, or hyphen.',
-                inputHandler: (val: string) =>
-                  (this.packageOptions.packageId = val),
-              })}
-            </div>
-            <div class="form-group">
-              ${this.renderFormInput({
-                label: 'Publisher display name',
-                tooltip: `The display name of your app's publisher. Gets this value from Windows Partner Center.`,
-                tooltipLink:
-                  'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
-                inputId: 'publisher-display-name-input',
-                required: true,
-                minLength: 3,
-                spellcheck: false,
-                validationErrorMessage:
-                  'Publisher display name must be at least 3 characters. Get this value from Windows Partner Center.',
-                placeholder: 'Contoso Inc',
-                inputHandler: (val: string) =>
-                  (this.packageOptions.publisher.displayName = val),
-              })}
-            </div>
-            <div class="form-group">
-              ${this.renderFormInput({
-                label: 'Publisher ID',
-                tooltip: `The ID of your app's publisher. Get this value from Windows Partner Center.`,
-                tooltipLink:
-                  'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
-                inputId: 'publisher-id-input',
-                placeholder: 'CN=3a54a224-05dd-42aa-85bd-3f3c1478fdca',
-                validationErrorMessage:
-                  'Publisher ID must be in the format CN=XXXX. Get your publisher ID from Partner Center.',
-                pattern: 'CN=.+',
-                required: true,
-                spellcheck: false,
-                minLength: 4,
-                inputHandler: (val: string) =>
-                  (this.packageOptions.publisher.commonName = val),
-              })}
-            </div>
-          </div>
           <!-- "all settings" section of the modal -->
           <sl-details @sl-show=${() => this.rotateNinety()} @sl-hide=${() => this.rotateZero()}>
             <div class="details-summary" slot="summary">
