@@ -46,7 +46,7 @@ export class WindowsForm extends AppPackageFormBase {
           width: 135px;
           height: 40px;
         }
-        .basic-settings, .adv-settings {
+        .adv-settings {
           display: flex;
           flex-direction: column;
           gap: .75em;
@@ -56,40 +56,6 @@ export class WindowsForm extends AppPackageFormBase {
           display: flex;
           overflow: auto;
           flex-direction: column;
-        }
-
-        sl-details {
-          margin-top: 1em;
-        }
-
-        sl-details::part(base){
-          border: none;
-        }
-
-        sl-details::part(summary-icon){
-          display: none;
-        }
-
-        .dropdown_icon {
-          transform: rotate(0deg);
-          transition: transform .5s;
-          height: 30px;
-        }
-
-        sl-details::part(header){
-          padding: 0 10px;
-        }
-
-        .details-summary {
-          display: flex;
-          align-items: center;
-          width: 100%;
-        }
-
-        .details-summary p {
-          margin: 0;
-          font-size: 18px;
-          font-weight: bold;
         }
 
         .sub-multi {
@@ -256,18 +222,6 @@ export class WindowsForm extends AppPackageFormBase {
     } else {
       desktopCheckbox.setCustomValidity('');
     }
-  }
-
-  rotateZero(){
-    recordPWABuilderProcessStep("windows_form_all_settings_expanded", AnalyticsBehavior.ProcessCheckpoint);
-    let icon: any = this.shadowRoot!.querySelector('.dropdown_icon');
-    icon!.style.transform = "rotate(0deg)";
-  }
-
-  rotateNinety(){
-    recordPWABuilderProcessStep("windows_form_all_settings_collapsed", AnalyticsBehavior.ProcessCheckpoint);
-    let icon: any = this.shadowRoot!.querySelector('.dropdown_icon');
-    icon!.style.transform = "rotate(90deg)";
   }
 
   public getPackageOptions(): PackageOptions {
