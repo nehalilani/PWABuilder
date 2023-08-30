@@ -11,6 +11,8 @@ import { AppPackageFormBase, FormInput } from './app-package-form-base';
 import { fetchOrCreateManifest } from '../services/manifest';
 import { AnalyticsBehavior, recordPWABuilderProcessStep } from '../utils/analytics';
 import { ManifestContext, PackageOptions } from '../utils/interfaces';
+import { AppNameInputPattern } from '../utils/constants';
+import "../components/arrow-link";
 
 @customElement('windows-form')
 
@@ -160,6 +162,25 @@ export class WindowsForm extends AppPackageFormBase {
         .color-radio::part(control--checked){
           background-color: var(--primary-color);
           border-color: var(--primary-color);
+        }
+
+        #ai-hub-label {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        #ai-hub-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        #ai-hub-text p {
+          margin: 0;
+          color: #7f7f7f;
+          font-size: 14px;
         }
        
     `
@@ -337,7 +358,6 @@ export class WindowsForm extends AppPackageFormBase {
         style="width: 100%"
       >
         <div id="form-layout">
-
             <div class="adv-settings">
               <div class="form-group">
                 ${this.renderFormInput({
@@ -351,7 +371,7 @@ export class WindowsForm extends AppPackageFormBase {
                   maxLength: 256,
                   value: this.packageOptions.name,
                   placeholder: 'My Awesome PWA',
-                  pattern: "[^|$@#><)(!&%*]*$",
+                  pattern: AppNameInputPattern,
                   validationErrorMessage:
                     'App name must not include special characters and be between 1 and 256 characters',
                   inputHandler: (val: string) =>
