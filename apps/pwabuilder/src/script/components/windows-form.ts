@@ -337,12 +337,7 @@ export class WindowsForm extends AppPackageFormBase {
         style="width: 100%"
       >
         <div id="form-layout">
-          <!-- "all settings" section of the modal -->
-          <sl-details @sl-show=${() => this.rotateNinety()} @sl-hide=${() => this.rotateZero()}>
-            <div class="details-summary" slot="summary">
-              <p>All Settings</p>
-              <img class="dropdown_icon" src="/assets/new/dropdownIcon.svg" alt="dropdown toggler"/>
-            </div>
+
             <div class="adv-settings">
               <div class="form-group">
                 ${this.renderFormInput({
@@ -515,9 +510,7 @@ export class WindowsForm extends AppPackageFormBase {
                 </div>
               </div>
             </div>
-          </sl-details>
-        </div>
-
+          </div>
       </form>
     </div>
     `;
