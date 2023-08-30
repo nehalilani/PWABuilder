@@ -182,7 +182,6 @@ export class WindowsForm extends AppPackageFormBase {
           color: #7f7f7f;
           font-size: 14px;
         }
-       
     `
     ];
   }
@@ -359,6 +358,23 @@ export class WindowsForm extends AppPackageFormBase {
       >
         <div id="form-layout">
             <div class="adv-settings">
+              <div class="form-group" id="ai-hub">
+                <div id="ai-hub-label">
+                  <label>Does your app use AI?</label>
+                  <info-circle-tooltip 
+                    text="AI Hub is a new curated section in the Microsoft Store that navigates Windows users to the best AI experiences built by the developer community and Microsoft."
+                    link="https://blogs.windows.com/windowsdeveloper/2023/05/23/welcoming-ai-to-the-microsoft-store-on-windows/"
+                    @click=${() => {
+                      recordPWABuilderProcessStep("ai_hub_read_more_link_click", AnalyticsBehavior.ProcessCheckpoint)
+                    }
+                  }
+                  ></info-circle-tooltip>
+                </div>
+                <div id="ai-hub-text">
+                  <p>We will promote the best AI experiences built by the developer community on our Microsoft Store's AI Hub.</p>
+                  <arrow-link .text=${"Join Us"} .link=${"https://aka.ms/MicrosoftStoreAIHub"}></arrow-link>
+                </div>
+              </div>
               <div class="form-group">
                 ${this.renderFormInput({
                   label: 'App name',
@@ -530,7 +546,7 @@ export class WindowsForm extends AppPackageFormBase {
                 </div>
               </div>
             </div>
-          </div>
+        </div>
       </form>
     </div>
     `;
