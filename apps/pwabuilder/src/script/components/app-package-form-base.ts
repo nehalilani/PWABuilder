@@ -204,7 +204,7 @@ export class AppPackageFormBase extends LitElement {
     `;
   }
 
-  private renderFormColorPicker(formInput: FormInput){
+  protected renderFormColorPicker(formInput: FormInput){
     return html`
     <div class="colorPickerAndValue">
       <sl-color-picker
