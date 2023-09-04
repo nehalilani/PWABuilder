@@ -283,7 +283,7 @@ export class WindowsForm extends AppPackageFormBase {
             <sl-radio class="color-radio" size="small" value="custom">Custom Color</sl-radio>
           </sl-radio-group>
           ${this.customSelected ? html`
-            ${this.renderFormInput(formInput)}
+            ${this.renderFormColorPicker(formInput)}
           ` : html``}
         </div>
       </div>
