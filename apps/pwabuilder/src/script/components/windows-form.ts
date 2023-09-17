@@ -358,7 +358,11 @@ export class WindowsForm extends AppPackageFormBase {
         style="width: 100%"
       >
         <div id="form-layout">
-          <div class="basic-settings">
+        
+        <div class="basic-settings">
+            <div class="sub-multi">
+              <p>Note: The following 3 fields are optional. You may leave them blank and download the package. They will be auto filled when the package is uploaded on Windows Partner Center.</p>
+            </div>            
             <div class="form-group">
               ${this.renderFormInput({
                 label: 'Package ID',
@@ -366,7 +370,6 @@ export class WindowsForm extends AppPackageFormBase {
                 tooltipLink:
                   'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
                 inputId: 'package-id-input',
-                required: true,
                 placeholder: 'MyCompany.MyApp',
                 minLength: 3,
                 maxLength: 50,
@@ -385,7 +388,6 @@ export class WindowsForm extends AppPackageFormBase {
                 tooltipLink:
                   'https://blog.pwabuilder.com/docs/finding-your-windows-publisher-info/',
                 inputId: 'publisher-display-name-input',
-                required: true,
                 minLength: 3,
                 spellcheck: false,
                 validationErrorMessage:
@@ -406,7 +408,6 @@ export class WindowsForm extends AppPackageFormBase {
                 validationErrorMessage:
                   'Publisher ID must be in the format CN=XXXX. Get your publisher ID from Partner Center.',
                 pattern: 'CN=.+',
-                required: true,
                 spellcheck: false,
                 minLength: 4,
                 inputHandler: (val: string) =>
